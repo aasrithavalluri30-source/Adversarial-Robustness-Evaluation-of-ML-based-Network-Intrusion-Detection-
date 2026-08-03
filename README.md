@@ -85,6 +85,15 @@ Training the Defender on real + GAN/diffusion-synthetic data performed *slightly
 High accuracy on a static benchmark does not imply robustness. A classifier can be near-perfect on unmodified data while still having a narrow, exploitable blind spot that an adversarial process can reliably find and expand. This motivates adaptive, targeted, or ensemble-based detection approaches — and shows that blind data augmentation is not a substitute for understanding *where* a model is actually weak.
 
 ---
+## Results — Plots
+
+| | |
+|---|---|
+| ![Plot 1](plots/1.png) | ![Plot 2](plots/2.png) |
+| ![Plot 3](plots/3.png) | ![Plot 4](plots/4.png) |
+
+
+---
 **How to Use**
 **Option A — Run in Google Colab (easiest, no local setup)**
 
