@@ -77,14 +77,52 @@ TCP window-size and sequence-number manipulation is a documented real-world IDS 
 
 Training the Defender on real + GAN/diffusion-synthetic data performed *slightly worse* on every held-out metric (precision, recall, F1, AUC) than training on real data alone — the synthetic samples likely added mild label noise rather than genuinely new decision-boundary information, since they weren't targeted at the model's actual weak spot.
 
+**Plots/Visulaizations**
+
+
 ## Conclusion
 
 High accuracy on a static benchmark does not imply robustness. A classifier can be near-perfect on unmodified data while still having a narrow, exploitable blind spot that an adversarial process can reliably find and expand. This motivates adaptive, targeted, or ensemble-based detection approaches — and shows that blind data augmentation is not a substitute for understanding *where* a model is actually weak.
 
+---
+**How to Use**
+**Option A — Run in Google Colab (easiest, no local setup)**
 
-```
+- Click into adversarial_ids_robustness.ipynb in this repo on GitHub.
+- Click the "Open in Colab" badge at the top of the notebook (or go to colab.research.google.com → File → Open notebook → GitHub tab → paste this repo's URL).
+-- In Colab: Runtime → Run all. The dataset downloads automatically via kagglehub on first run — you'll be prompted to authenticate with a free Kaggle account the first time.
+-- Full run (WGAN + diffusion training + evolution loop) takes roughly 15–30 minutes depending on whether Colab assigns you a GPU (Runtime → Change runtime type → GPU to speed this up significantly).
 
-Open `notebook/adversarial_ids_robustness.ipynb` in Jupyter or Colab and run all cells top to bottom. The dataset downloads automatically via `kagglehub` on first run (requires a free Kaggle account/API key).
+### Option B — Run locally
+
+1. **Clone the repo:**
+   ```bash
+   git clone https://github.com/<aasrithavalluri30-source>/<Adversarial-Robustness-Evaluation-of-ML-based-Network-Intrusion-Detection>.git
+   cd <Adversarial-Robustness-Evaluation-of-ML-based-Network-Intrusion-Detection>
+   ```
+
+2. **(Recommended) create a virtual environment:**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate      # on Windows: venv\Scripts\activate
+   ```
+
+3. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   pip install jupyter          # if you don't already have it
+   ```
+
+4. **Set up Kaggle access** (needed for the dataset download):
+   - Create a free account at [kaggle.com](https://www.kaggle.com)
+   - Go to Account Settings → API → "Create New Token" to download `kaggle.json`
+   - Place it at `~/.kaggle/kaggle.json` (Mac/Linux) or `C:\Users\<you>\.kaggle\kaggle.json` (Windows)
+
+5. **Launch and run:**
+   ```bash
+   jupyter notebook adversarial_ids_robustness.ipynb
+   ```
+   Then run all cells top to bottom (Kernel → Restart & Run All).
 
 ## Tech Stack
 
