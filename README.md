@@ -79,32 +79,9 @@ Training the Defender on real + GAN/diffusion-synthetic data performed *slightly
 
 ## Conclusion
 
-High accuracy on a static benchmark does not imply robustness. A classifier can be near-perfect on unmodified data while still having a narrow, exploitable blind spot that an adversarial process can reliably find and expand. This motivates adaptive, targeted, or ensemble-based detection approaches over single static classifiers — and shows that blind data augmentation is not a substitute for understanding *where* a model is actually weak.
+High accuracy on a static benchmark does not imply robustness. A classifier can be near-perfect on unmodified data while still having a narrow, exploitable blind spot that an adversarial process can reliably find and expand. This motivates adaptive, targeted, or ensemble-based detection approaches — and shows that blind data augmentation is not a substitute for understanding *where* a model is actually weak.
 
-## Limitations
 
-- The most-exploited features were repeatedly observed pinned at the `[-1, 1]` clamp boundary, suggesting mutation may push further than the realistic bound allows if given room — the true ceiling on evasion rate is untested.
-- Evaluated against a single architecture (2-layer MLP Defender). Whether the same feature cluster remains exploitable against ensemble, tree-based, or adversarially-trained detectors is untested.
-- Uses a public academic benchmark dataset, not live network traffic.
-
-## Repository Structure
-
-```
-.
-├── README.md
-├── requirements.txt
-├── notebook/
-│   └── adversarial_ids_robustness.ipynb
-└── results/
-    ├── evasion_rate_plot.png
-    ├── feature_frequency_plot.png
-    └── training_curves.png
-```
-
-## Setup & Usage
-
-```bash
-pip install -r requirements.txt
 ```
 
 Open `notebook/adversarial_ids_robustness.ipynb` in Jupyter or Colab and run all cells top to bottom. The dataset downloads automatically via `kagglehub` on first run (requires a free Kaggle account/API key).
