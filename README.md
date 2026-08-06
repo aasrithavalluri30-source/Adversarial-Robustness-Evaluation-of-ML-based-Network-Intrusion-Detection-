@@ -1,6 +1,6 @@
 # Adversarial Robustness Evaluation of ML-based Intrusion Detection
 
-A  project investigating why static, single-shot ML classifiers are insufficient for real-world network intrusion detection — by building a GAN + diffusion-model pipeline that adversarially evolves attack traffic and systematically probes a trained detector for blind spots.
+A  project investigating why static, single-shot ML classifiers are insufficient for real-world network intrusion detection ,by building a GAN + diffusion-model pipeline that adversarially evolves attack traffic and systematically probes a trained detector for blind spots.
 
 ---
 
